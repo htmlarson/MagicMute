@@ -1,8 +1,3 @@
-<!-- This software is designed for a commercial, as a prop. Consider the purpose before contributing. 
-
-Visual changes would be of great help. ~ htmlarson
-
---> 
 <!DOCTYLE html>
     <html manifest="main.manifest">
         <head>
@@ -61,15 +56,15 @@ Visual changes would be of great help. ~ htmlarson
             </br>
             </br>
             </br>
-            <span class="button_container" id="button_touch_target" onclick="do_change_button()">
+            <span class="button_container" id="button_touch_target">
                 <span class="button_contents" id="button_contents">
                     Mute!
                 </span>
             </span>
             <script>
-                    document.ontouchmove = function(event){
-                         event.preventDefault();
-                    }
+                window.addEventListener("load", function() {
+                    document.getElementById('button_touch_target').addEventListener("click", do_change_button);
+                });
                 function do_change_button() {
                     if (sessionStorage.toggle) {
                         document.getElementById('button_contents').innerHTML = "Mute!";
